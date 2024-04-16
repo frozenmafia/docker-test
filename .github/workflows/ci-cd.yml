@@ -20,7 +20,7 @@ jobs:
         run: echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
 
       - name: Push Docker image to registry
-        run: docker push ${{ secrets.REPO_NAME }}/${{ secrets.IMAGE_NAME }}:latest
+        run: docker push ${{secrets.REPO_NAME}}/${{secrets.IMAGE_NAME}}:latest
 
       - name: SSH into remote server and pull updated Docker image
         uses: appleboy/ssh-action@master
